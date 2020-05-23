@@ -4,7 +4,7 @@ module.exports = {
     async create(req, res) {
         const { title, description, category, initialDate, finalDate } = req.body
 
-        const user_id = req.headers.authorization
+        const user_id = req.headers.user
 
         const response = await connection('tasks').insert({
             title,
@@ -20,7 +20,7 @@ module.exports = {
 
     async update(req, res) {
         const { id } = req.params
-        const user_id = req.headers.authorization
+        const user_id = req.headers.user
 
         const task = await connection('tasks')
             .where('id', id)
@@ -46,7 +46,7 @@ module.exports = {
 
     async delete(req, res) {
         const { id } = req.params
-        const user_id = req.headers.authorization
+        const user_id = req.headers.user
 
         const task = await connection('tasks')
             .where('id', id)
@@ -64,7 +64,7 @@ module.exports = {
     },
 
     async index (req, res) {
-        const user_id = req.headers.authorization
+        const user_id = req.headers.user
 
         // LISTA TODAS AS TASKS DO USUÁRIO LOGADO
         const tasks = await connection('tasks')

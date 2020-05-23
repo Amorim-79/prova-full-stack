@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    box-sizing: border-box;
+}
+
+/* Configurações para layout centralizado e otimizado */
+body {
+    font: 400 14px Roboto, sans-serif;
+    -webkit-font-smoothing: antialiased;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Links de redirecionamentos (reutilizavel) */
+.link-redirect {
+    flex-basis: 100%;
+    margin-left: 5px;
+    margin-top: 130px;
+    text-decoration: none;
+    color: #E02041;
+
+    transition-duration: 0.3s;
+}
+
+.link-redirect:hover {
+    opacity: 0.8;
+}

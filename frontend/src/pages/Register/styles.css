@@ -1,0 +1,55 @@
+/* Container geral da área de Registro */
+.register-container {
+    background-color: #FFF;
+    width: 800px;
+    height: 400px;
+    margin-top: 100px;
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    border: 0.807281px solid rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 3.22912px 3.22912px rgba(0, 0, 0, 0.25);
+    border-radius: 8px;
+}
+
+.register-container h1 {
+    margin-top: 10px;
+    flex-basis: 100%;
+    text-align: center;
+    color: #E02041;
+}
+
+/* Formulário de Registro */
+.register-form {
+    margin-top: 100px;
+    flex-basis: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+}
+
+.register-form input {
+    background: transparent;
+    color: #CCC;
+    width: 200px;
+    margin: 5px;
+    border: 0;
+    border-bottom: 1px solid #333;
+}
+
+.register-form button {
+    margin-top: 5px;
+    padding: 5px;
+    border: 0.807281px solid rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+
+    cursor: pointer;
+    transition-duration: 0.3s;
+}
+
+.register-form button:hover {
+    background: #CCC;
+}

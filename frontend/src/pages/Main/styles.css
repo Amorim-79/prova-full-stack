@@ -1,0 +1,131 @@
+/* Área das tasks */
+.tasks-container {
+    width: 1000px;
+
+    border: 0.807281px solid rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 3.22912px 3.22912px rgba(0, 0, 0, 0.25);
+    border-radius: 8px;
+    
+    padding: 20px;
+    margin-top: 50px;
+
+    display: flex;
+    flex-wrap: wrap;
+
+    justify-content: space-between;
+}
+
+.tasks-container h1 {
+    flex-basis: 100%;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+/* Caixa da task (individual) */
+.task-box {
+    min-width: 400px;
+    max-width: 400px;
+
+    border: 2px solid #E02041;
+    box-shadow: 0px 3.22912px 3.22912px rgba(0, 0, 0, 0.25);
+
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+
+    padding: 10px;
+
+    margin-bottom: 30px;
+
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.task-box .title {
+    flex-basis: 100%;
+    max-width: 350px;
+    overflow-wrap: break-word;
+
+    font-weight: bold;
+
+    margin-left: 5px;
+}
+
+.task-box .description {
+    flex-basis: 100%;
+    max-width: 350px;
+    margin-top: 10px;
+    overflow-wrap: break-word;
+}
+
+.task-box .category {
+    margin-top: 30px;
+    flex-basis: 20%;
+    color: #AAA;
+}
+
+.task-box .date {
+    flex-basis: 70%;
+    margin-top: 40px;
+    margin-left: 30px;
+
+    color: #AAA;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: end;
+}
+
+.task-box .date p {
+    margin-top: 5px;
+}
+
+/* Botão de Logout */
+.btn-logout {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    border: 0;
+    cursor: pointer;
+    color: #E02041;
+    background: transparent;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    transition-duration: 0.3;
+}
+
+.btn-logout:hover {
+    opacity: 0.6;
+}
+
+/* Botão de criar novas tasks */
+.btn-create-task {
+    position: fixed;
+    right: 5px;
+    bottom: 5px;
+
+    border: 0;
+    background: transparent;
+    cursor: pointer;
+
+    transition-duration: 0.3s;
+}
+
+.btn-create-task:hover {
+   bottom: 10px; 
+}
+
+/* Botões para ações nas tasks (delete, update status) */
+.btn-action {
+    border: 0;
+    background: transparent;
+    margin-right: 10px;
+    margin-top: 10px;
+
+    cursor: pointer;
+}

@@ -11,8 +11,9 @@ routes.post('/login', UserController.login)
 
 
 // ROTAS DAS TAREFAS (CRIAÇÃO, LISTAGEM, ATUALIZAÇÃO, EXCLUSÃO)
-routes.post('/task', TaskController.create)
-routes.get('/task', TaskController.index)
+routes.post('/tasks', TaskController.create)
+routes.get('/tasks', TaskController.index)
+
 routes.put('/task/:id', TaskController.update)
 routes.delete('/task/:id', TaskController.delete)
 

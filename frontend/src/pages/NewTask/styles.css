@@ -1,0 +1,84 @@
+/* Container geral da área de criação de task */
+.new-task-container {
+    margin-top: 80px;
+    background: #ccc;
+    width: 800px;
+    height: 500px;
+
+    border: 0.807281px solid rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 3.22912px 3.22912px rgba(0, 0, 0, 0.25);
+    border-radius: 8px;
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+
+    padding: 20px;
+}
+
+.new-task-container h1 {
+    flex-basis: 100%;
+    text-align: center;
+    color: #E02041;
+
+    margin-top: 50px;
+    margin-bottom: 50px;
+
+}
+
+/* Formulário de criação de task */
+.task-form {
+    width: 40%;
+    
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.task-form label {
+    font-weight: bold;
+    color: #333;
+}
+
+.task-form input {
+    width: 300px;
+    margin-bottom: 10px;
+
+    border: 0;
+    border-radius: 2px;
+
+    padding: 2px;
+
+    color: #333;
+}
+
+.task-form textarea {
+    width: 300px;
+    height: 100px;
+    margin-bottom: 10px;
+
+    resize: none;
+
+    padding: 5px;
+    color: #333;
+
+    border: 0;
+    border-radius: 2px;
+}
+
+.task-form button {
+    width: 80px;
+    height: 30px;
+    border: 0;
+    border-radius: 8px;
+
+    cursor: pointer;
+
+    transition-duration: 0.3s;
+}
+
+.task-form button:hover {
+    background: #BBB;
+}
