@@ -17,7 +17,7 @@ export default function Main() {
 
     const history = useHistory()
 
-    // FUNÇÃO QUE CARREGA AS TASKS
+    // FUNÇÃO QUE CARREGA AS TASKS DE ACORDO COM A CATEGORIA SELECIONADA
     useEffect(() => {
         async function loadTasks() {
             const response = await api.get(`/tasks/${categorySelected}`, {
@@ -30,6 +30,7 @@ export default function Main() {
         loadTasks()
     }, [tasks])
 
+    // FUNÇÃO QUE CARREGA TODAS AS CATEGORIAS EXISTENTES
     useEffect(() => {
         async function loadCategorys() {
             const response = await api.get('/categorys', {

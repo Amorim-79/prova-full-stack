@@ -18,6 +18,7 @@ routes.get('/tasks/:category', TaskController.index)
 routes.put('/task/:id', TaskController.update)
 routes.delete('/task/:id', TaskController.delete)
 
+// ROTA PARA LISTAR AS CATEGORIAS CRIADAS SEM REPETIÇÃO
 routes.get('/categorys', CategoryController.index)
 
 module.exports = routes

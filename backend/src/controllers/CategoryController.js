@@ -1,6 +1,7 @@
 const connection = require('../database/connection')
 
 module.exports = {
+    // LISTA TODAS AS CATEGORIAS DAS TAREFAS, SEM REPETIÇÃO
     async index (req, res) {
         const user_id = req.headers.user
 
