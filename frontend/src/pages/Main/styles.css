@@ -21,10 +21,23 @@
     margin-bottom: 50px;
 }
 
+.tasks-container select {
+    width: 80px;
+    position: absolute;
+    margin-left: 70px;
+}
+
+.tasks-container label {
+    position: absolute;
+    font-weight: bold;
+
+}
+
 /* Caixa da task (individual) */
 .task-box {
     min-width: 400px;
     max-width: 400px;
+    
 
     border: 2px solid #E02041;
     box-shadow: 0px 3.22912px 3.22912px rgba(0, 0, 0, 0.25);

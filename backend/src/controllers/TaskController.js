@@ -63,13 +63,25 @@ module.exports = {
         return res.status(204).send()
     },
 
-    async index (req, res) {
+    async index(req, res) {
+        const { category } = req.params
         const user_id = req.headers.user
 
+        let tasks
+
         // LISTA TODAS AS TASKS DO USUÁRIO LOGADO
-        const tasks = await connection('tasks')
-            .where('user_id', user_id)
-            .select('*')
+        if (category == '*') {
+             tasks = await connection('tasks')
+                .where('user_id', user_id)
+                .select('*')
+
+        } else {
+            // LISTA APENAS AS TASKS COM DETERMINADA CATEGORIA DO USUÁRIO LOGADO
+             tasks = await connection('tasks')
+                .where('user_id', user_id)
+                .where('category', category)
+                .select('*')
+        }
 
         return res.json(tasks)
     }

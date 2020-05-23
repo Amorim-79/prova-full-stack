@@ -9,6 +9,9 @@ import { logout } from '../../services/auth'
 
 export default function Main() {
     const [tasks, setTasks] = useState([])
+    const [categorys, setCategorys] = useState([])
+
+    const [categorySelected, setCategorySelected] = useState('*')
 
     const userId = localStorage.getItem('userId')
 
@@ -17,7 +20,7 @@ export default function Main() {
     // FUNÇÃO QUE CARREGA AS TASKS
     useEffect(() => {
         async function loadTasks() {
-            const response = await api.get('/tasks', {
+            const response = await api.get(`/tasks/${categorySelected}`, {
                 headers: {
                     user: userId
                 }
@@ -26,6 +29,18 @@ export default function Main() {
         }
         loadTasks()
     }, [tasks])
+
+    useEffect(() => {
+        async function loadCategorys() {
+            const response = await api.get('/categorys', {
+                headers: {
+                    user: userId
+                }
+            })
+            setCategorys(response.data)
+        }
+        loadCategorys()
+    },[categorys])
 
     // FUNÇÃO QUE DELETA A TASK SELECIONADA
     async function handleDeleteTask(id) {
@@ -52,7 +67,6 @@ export default function Main() {
                 }
             })
 
-
         } catch (err) {
             alert('Ocorreu um erro ao atualizar a tarefa.')
         }
@@ -77,6 +91,21 @@ export default function Main() {
 
             <div className="tasks-container">
                 <h1>MINHAS TAREFAS</h1>
+
+                <label>Categoria:</label>
+                <select
+                className="categorys"
+                name="category"
+                value={categorySelected}
+                onChange={e => setCategorySelected(e.target.value)}
+                >
+                    
+                    <option value="*">Todos</option>
+                    {categorys.map(category => (
+                        <option value={category.category}>{category.category}</option>
+                    ))}
+
+                </select>
 
                 {tasks.map(task => (
                     <div className="task-box">
