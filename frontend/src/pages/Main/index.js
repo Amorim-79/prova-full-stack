@@ -18,15 +18,16 @@ export default function Main() {
     const history = useHistory()
 
     // FUNÇÃO QUE CARREGA AS TASKS DE ACORDO COM A CATEGORIA SELECIONADA
+    async function loadTasks() {
+        const response = await api.get(`/tasks/${categorySelected}`, {
+            headers: {
+                user: userId
+            }
+        })
+        setTasks(response.data)
+    }
+
     useEffect(() => {
-        async function loadTasks() {
-            const response = await api.get(`/tasks/${categorySelected}`, {
-                headers: {
-                    user: userId
-                }
-            })
-            setTasks(response.data)
-        }
         loadTasks()
     }, [categorySelected])
 
@@ -67,7 +68,8 @@ export default function Main() {
                     user: userId
                 }
             })
-
+            loadTasks()
+        
         } catch (err) {
             alert('Ocorreu um erro ao atualizar a tarefa.')
         }
