@@ -28,7 +28,7 @@ export default function Main() {
             setTasks(response.data)
         }
         loadTasks()
-    }, [tasks])
+    }, [categorySelected])
 
     // FUNÇÃO QUE CARREGA TODAS AS CATEGORIAS EXISTENTES
     useEffect(() => {
@@ -41,7 +41,7 @@ export default function Main() {
             setCategorys(response.data)
         }
         loadCategorys()
-    },[categorys])
+    },[])
 
     // FUNÇÃO QUE DELETA A TASK SELECIONADA
     async function handleDeleteTask(id) {

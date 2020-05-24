@@ -2,6 +2,8 @@ const express = require('express')
 
 const routes = express.Router()
 
+const authMiddleware = require('./middlewares/auth')
+
 const UserController = require('./controllers/UserController')
 const TaskController = require('./controllers/TaskController')
 const CategoryController = require('./controllers/CategoryController')
@@ -12,11 +14,11 @@ routes.post('/login', UserController.login)
 
 
 // ROTAS DAS TAREFAS (CRIAÇÃO, LISTAGEM, ATUALIZAÇÃO, EXCLUSÃO)
-routes.post('/tasks', TaskController.create)
-routes.get('/tasks/:category', TaskController.index)
+routes.post('/tasks', authMiddleware, TaskController.create)
+routes.get('/tasks/:category', authMiddleware, TaskController.index)
 
-routes.put('/task/:id', TaskController.update)
-routes.delete('/task/:id', TaskController.delete)
+routes.put('/task/:id', authMiddleware, TaskController.update)
+routes.delete('/task/:id', authMiddleware, TaskController.delete)
 
 // ROTA PARA LISTAR AS CATEGORIAS CRIADAS SEM REPETIÇÃO
 routes.get('/categorys', CategoryController.index)
